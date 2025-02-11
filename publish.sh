@@ -2,11 +2,11 @@
 
 set -xe
 
-docker build -t vidog/kubectl-envsubst:0.1 .
+docker buildx build --platform linux/amd64 -t vidog/kubectl-envsubst:0.2 .
 
-docker push vidog/kubectl-envsubst:0.1
+docker push vidog/kubectl-envsubst:0.2
 
-docker build -t vidog/kubectl-envsubst:latest .
+docker buildx build --platform linux/amd64 -t vidog/kubectl-envsubst:latest .
 
 docker push vidog/kubectl-envsubst:latest
 
